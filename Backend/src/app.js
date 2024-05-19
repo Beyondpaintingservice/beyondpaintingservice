@@ -42,7 +42,7 @@ app.use("/api/v1/footer", footerRouter);
 app.use("/api/v1/mail", mailRouter);
 
 // Get server status
-app.get("api/v1/server-status", (_, res) => {
+app.get("/api/v1/server-status", (_, res) => {
   res.status(200).json({
     success: true,
   });
