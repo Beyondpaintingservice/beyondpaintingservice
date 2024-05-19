@@ -15,69 +15,36 @@ import GoogleMap from "../components/GoogleMap";
 import { submitContactApi } from "../constant/apiUrls";
 
 const ContactUs = () => {
-  const [userData, setUserData] = useState([]);
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const user = useSelector((store) => store.user.userDetails);
-
-  useEffect(() => {
-    if (userData?.token || user?.token) {
-      navigate("/");
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
-    watch,
   } = useForm();
-
-  // eslint-disable-next-line no-unused-vars
-  const password = watch("password");
 
   const onSubmit = async (localData) => {
     try {
       // console.log(previewSource);
 
-      const headersList = {
-        Accept: "*/*",
-      };
-
-      const formData = new FormData();
-      formData.append("fullName", localData.fullName);
-      formData.append("email", localData.email);
-      formData.append("password", localData.password);
-      formData.append("role", localData.role);
-
-      const bodyContent = formData;
-
       const reqOptions = {
         url: submitContactApi,
         method: "POST",
-        headers: headersList,
-        data: bodyContent,
+        data: localData,
       };
 
-      const { data } = await axios.request(reqOptions);
-      console.log(data);
+      const response = await axios.request(reqOptions);
+      // console.log(response.data);
+      reset();
 
-      if (!data.token) {
-        return toast.error(data.message || "User Adding Failed");
-      }
-
-      dispatch(setUser(data));
-      setUserData(data);
-      // console.log(data);
-      return toast.success(`${data?.message || "Successfully Registered!"}`);
+      return toast.success(
+        `${response?.data?.message || "Successfully Submitted!"}`
+      );
     } catch (error) {
       console.log(error);
       toast.error(
-        error.response.data.error + " Slow Internet !" ||
+        error.response?.data.error + " Slow Internet !" ||
           "Error occurred during Registering."
       );
     }
