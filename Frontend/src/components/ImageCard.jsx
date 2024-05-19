@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { Image, Space } from "antd";
 
-import "./imageCardCSS.css";
+import "./imageCard.css";
 
 const ImageCard = ({
 	img = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
