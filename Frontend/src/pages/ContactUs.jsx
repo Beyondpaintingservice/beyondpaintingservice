@@ -52,7 +52,7 @@ const ContactUs = () => {
 
   return (
     <ContentWrapper>
-      <h2 className="text-2xl md:pt-20 font-bold text-gray-800 lg:text-3xl dark:text-white text-start">
+      <h2 className="text-2xl pt-20 font-bold text-gray-800 lg:text-3xl dark:text-white text-start">
         Contact us
       </h2>
       <div className="w-full flex flex-col justify-center items-center md:flex-row md:items-start">

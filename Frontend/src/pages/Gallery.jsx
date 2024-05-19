@@ -31,7 +31,7 @@ const Gallery = () => {
 
 	return (
 		<ContentWrapper>
-			<div className='min-h-screen md:pt-20 dark:text-white'>
+			<div className='min-h-screen pt-20 dark:text-white'>
 				<h1 className='text-3xl font-bold text-start mx-auto max-w-screen-4xl '>Gallery</h1>
 
 				<div className='bg-white dark:bg-gray-950 duration-700 sm:py-5 lg:py-2'>
