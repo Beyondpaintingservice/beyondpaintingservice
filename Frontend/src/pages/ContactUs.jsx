@@ -38,8 +38,8 @@ const ContactUs = () => {
       // console.log(response.data);
       reset();
 
-      return toast.success(
-        `${response?.data?.message || "Successfully Submitted!"}`
+      toast.success(
+        `${response?.data?.message || "Successfully Submitted your query!"}`
       );
     } catch (error) {
       console.log(error);

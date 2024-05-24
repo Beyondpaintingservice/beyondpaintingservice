@@ -176,7 +176,8 @@ const Footer = () => {
         </span>
       </div>
       <div className="py-6 text-sm text-center dark:text-gray-400 text-gray-600">
-        &copy; {new Date().getFullYear()} Company Co. All rights reserved.
+        &copy; {new Date().getFullYear()} Company Co. All rights reserved.{" "}
+        <Link to="/admin-login">--</Link>
       </div>
     </footer>
   );
