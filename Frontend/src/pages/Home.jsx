@@ -4,12 +4,12 @@ import HeroRow from "../components/HeroRow";
 
 const Home = () => {
 	return (
-		<div className='md:pt-20'>
-			<HeroCarousal />
-			<HeroRow />
-			{/* <Spinner /> */}
-		</div>
-	);
+    <div className="pt-20">
+      <HeroCarousal />
+      <HeroRow />
+      {/* <Spinner /> */}
+    </div>
+  );
 };
 
 export default Home;
