@@ -16,6 +16,16 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+
+
+//serving front website
+app.use( express.static(path.resolve(__dirname, '../public/sitefiles')));
+app.get('/', function (req, res) {
+  res.sendFile(path.resolve(__dirname, '../public/sitefiles', 'index.html'));
+});
+
+
+
 //routes import
 import adminRouter from "./routes/admin.routes.js";
 import mailRouter from "./routes/mail.routes.js";

@@ -29,6 +29,7 @@ const addAbout = asyncHandler(async (req, res) => {
     .status(201)
     .json(new ApiResponse(201, newAbout, "About section added successfully"));
 });
+
 const getAbout = asyncHandler(async (req, res) => {
   try {
     // Fetch the latest about section from the database
