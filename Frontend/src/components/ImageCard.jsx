@@ -30,36 +30,36 @@ const ImageCard = ({
 			});
 	};
 	return (
-		<Image
-			className={className + "hover:bg-transparent "}
-			src={img}
-			preview={{
-				toolbarRender: (
-					_,
-					{
-						transform: { scale },
-						actions: {
-							onFlipY,
-							onFlipX,
-							onRotateLeft,
-							onRotateRight,
-							onZoomOut,
-							onZoomIn,
-						},
-					}
-				) => (
-					<Space size={12} className='toolbar-wrapper'>
-						<DownloadOutlined onClick={onDownload} />
-						<SwapOutlined rotate={90} onClick={onFlipY} />
-						<SwapOutlined onClick={onFlipX} />
-						<RotateLeftOutlined onClick={onRotateLeft} />
-						<RotateRightOutlined onClick={onRotateRight} />
-						<ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
-						<ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
-					</Space>
-				),
-			}}
-		/>
-	);
+    <Image
+      className={className + "hover:bg-transparent object-cover object-center"}
+      src={img}
+      preview={{
+        toolbarRender: (
+          _,
+          {
+            transform: { scale },
+            actions: {
+              onFlipY,
+              onFlipX,
+              onRotateLeft,
+              onRotateRight,
+              onZoomOut,
+              onZoomIn,
+            },
+          }
+        ) => (
+          <Space size={12} className="toolbar-wrapper">
+            <DownloadOutlined onClick={onDownload} />
+            <SwapOutlined rotate={90} onClick={onFlipY} />
+            <SwapOutlined onClick={onFlipX} />
+            <RotateLeftOutlined onClick={onRotateLeft} />
+            <RotateRightOutlined onClick={onRotateRight} />
+            <ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
+            <ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
+          </Space>
+        ),
+      }}
+    />
+  );
 };
 export default ImageCard;

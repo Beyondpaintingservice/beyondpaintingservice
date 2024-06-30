@@ -52,7 +52,7 @@ const Login = () => {
 
     try {
       const response = await axios.request(reqOptions);
-
+      console.log(response);
       if (!response.data) {
         console.log("no user");
         return toast.error(response.data.message || "User login Failed");
