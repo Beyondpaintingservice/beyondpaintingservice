@@ -26,7 +26,7 @@ const HeroCarousal = () => {
         autoPlay={true}
         infiniteLoop={true}
         interval={3000}
-        showThumbs={false}
+        showThumbs={true}
         stopOnHover={false}
       >
         {images &&

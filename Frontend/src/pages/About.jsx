@@ -1,10 +1,58 @@
+import { useEffect, useState } from "react";
 import AboutCounter from "../components/AboutCounter";
 import ContentWrapper from "../components/ContentWrapper";
 import TeamMembers from "../components/TeamMembers";
 import { motion } from "framer-motion";
 
 const About = () => {
-	return (
+  const [aboutData, setAboutData] = useState({
+    title: "",
+    description: "",
+    photo: "",
+    error: null,
+    loading: true,
+  });
+
+  const fetchAbout = async () => {
+    try {
+      const response = await fetch(
+        "https://beyondpaintingservice.onrender.com/api/v1/about/get-about"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch about data");
+      }
+
+      const data = await response.json();
+      setAboutData({
+        title: data?.data?.title,
+        description: data?.data?.description,
+        photo: data?.data?.photo,
+        error: null,
+        loading: false,
+      });
+    } catch (error) {
+      setAboutData((prevState) => ({
+        ...prevState,
+        error: error.message,
+        loading: false,
+      }));
+    }
+  };
+
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+
+  if (aboutData.loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (aboutData.error) {
+    return <div>Error: {aboutData.error}</div>;
+  }
+
+  return (
     <ContentWrapper>
       <div className="min-h-screen pt-10 dark:text-white">
         <div
@@ -14,7 +62,7 @@ const About = () => {
           <div className="max-w-7xl mx-auto">
             <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
               <svg
-                className="hidden lg:block absolute right-14 inset-y-0 h-full w-64  text-white dark:text-gray-950 transform translate-x-1/2 -z-10 duration-700"
+                className="hidden lg:block absolute right-14 inset-y-0 h-full w-64 text-white dark:text-gray-950 transform translate-x-1/2 -z-10 duration-700"
                 fill="currentColor"
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
@@ -32,13 +80,8 @@ const About = () => {
                   </h2>
 
                   <p className="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Accusantium unde voluptas voluptatibus optio laboriosam
-                    sequi possimus eos perferendis reiciendis facilis atque
-                    fugit fuga quidem animi, eaque suscipit amet? Fugit, quas
-                    laboriosam. Necessitatibus aperiam officia quasi culpa
-                    perspiciatis cum possimus suscipit qui eum pariatur?
-                    Repellat quod quidem illo cum, sequi dignissimos.
+                    {aboutData.description ||
+                      "Welcome to Beyond Painting Service! We specialize in high-quality painting to transform your space into something truly remarkable. Whether refreshing your home's interior, enhancing curb appeal with exterior painting, or improving your commercial property's aesthetics, we've got you covered. Our skilled team uses premium materials, ensuring long-lasting results. We offer personalized residential and commercial painting services with a focus on detail and customer satisfaction. Contact us today for a free consultation and customized quote tailored to your needs!"}
                   </p>
                 </div>
               </section>
@@ -52,20 +95,15 @@ const About = () => {
             <img
               className="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full"
               src={
-                `/images/2.jpg` ||
+                aboutData.photo ||
                 "https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg"
               }
-              alt=""
+              alt="About Us"
             />
           </motion.div>
         </div>
-        <>
-          <AboutCounter />
-        </>
-        <>
-          {/* Team Member Section */}
-          <TeamMembers />
-        </>
+        <AboutCounter />
+        <TeamMembers />
       </div>
     </ContentWrapper>
   );

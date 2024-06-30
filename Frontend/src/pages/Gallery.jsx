@@ -27,7 +27,6 @@ const Gallery = () => {
     };
 
     fetchImages();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) return <p>Error: {error.message}</p>;
@@ -54,7 +53,7 @@ const Gallery = () => {
                   >
                     <ImageCard
                       img={image.image}
-                      className="inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                      className="inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110 "
                     />
                   </motion.div>
                 ))}
