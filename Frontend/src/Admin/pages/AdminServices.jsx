@@ -42,11 +42,11 @@ const Services = ({ services, fetchServices }) => {
       formData,
       {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE3OTE1MjAxLCJleHAiOjE3MTgwMDE2MDF9.jGAuHvxKvUTT9NSMgZDImGbIzRhNPFbMtPtqiFNg57A`,
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzIwMzYyNTg3LCJleHAiOjE3MjA0NDg5ODd9.1Z9e4kunQJ5ZVeBjIo68yeJxAfSLI0GDQLmgnFgDy9csss`,
         },
       }
     );
-    console.log(response);
+    // console.log(response);
     setEdit(false);
     fetchServices();
   };
@@ -58,7 +58,7 @@ const Services = ({ services, fetchServices }) => {
         "https://beyondpaintingservice.onrender.com/api/v1/services/delete-service",
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE3OTE1MjAxLCJleHAiOjE3MTgwMDE2MDF9.jGAuHvxKvUTT9NSMgZDImGbIzRhNPFbMtPtqiFNg57A`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzIwMzYyNTg3LCJleHAiOjE3MjA0NDg5ODd9.1Z9e4kunQJ5ZVeBjIo68yeJxAfSLI0GDQLmgnFgDy9c`,
           },
           data: {
             _id: id,
@@ -146,6 +146,7 @@ const AddServices = ({ fetchServices }) => {
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
+  const admin = useSelector((store) => store.user.userDetails);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -161,7 +162,7 @@ const AddServices = ({ fetchServices }) => {
         formData,
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE3OTE1MjAxLCJleHAiOjE3MTgwMDE2MDF9.jGAuHvxKvUTT9NSMgZDImGbIzRhNPFbMtPtqiFNg57A`,
+            Authorization: `Bearer ${admin.accessToken}`,
           },
         }
       );
@@ -184,7 +185,7 @@ const AddServices = ({ fetchServices }) => {
           placeholder="Add Title"
           value={title}
           onChange={handleTitleChange}
-          className="text-2xl mx-2 w-full font-normal"
+          className="text-2xl mx-2 w-full font-normal text-black"
         />
         <div className="flex p-2">
           <div className="flex-1">
@@ -192,7 +193,7 @@ const AddServices = ({ fetchServices }) => {
               placeholder="Add Description"
               value={description}
               onChange={handleDescriptionChange}
-              className="mb-4 mx-2 w-full p-2"
+              className="mb-4 mx-2 w-full p-2 text-black"
             />
             <div className="mr-4">
               <input
@@ -205,7 +206,7 @@ const AddServices = ({ fetchServices }) => {
             <div className="mt-4">
               <button
                 type="submit"
-                className="py-1 px-2 bg-blue-500 rounded text-white"
+                className="py-1 px-2 bg-blue-500 rounded text-black"
               >
                 SAVE
               </button>
@@ -238,17 +239,21 @@ const AdminServices = () => {
     fetchServices();
   }, []);
 
-  const data = {
-    _id: "piwefojp7094i4rj92709cjei02349",
-    title: "My First Title",
-    description: "why services are the best",
-    image: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
-    readMoreLink: "jodfiwi",
-  };
+  // const data = {
+  //   _id: "piwefojp7094i4rj92709cjei02349",
+  //   title: "My First Title",
+  //   description: "why services are the best",
+  //   image: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
+  //   readMoreLink: "jodfiwi",
+  // };
   return (
     <div className="min-h-screen md:pt-10 dark:text-white">
       <h1 className="text-3xl font-bold mb-6">AdminServices</h1>
-      <div className="flex flex-col justify-center items-center gap-3">
+      {/* add data */}
+      <div className="flex flex-col justify-center items-center mt-5">
+        <AddServices fetchServices={fetchServices} />
+      </div>
+      <div className="flex flex-col justify-center items-center gap-3 text-black">
         {service &&
           service.map((data) => (
             <Services
@@ -257,10 +262,6 @@ const AdminServices = () => {
               fetchServices={fetchServices}
             />
           ))}
-      </div>
-      {/* add data */}
-      <div className="flex flex-col justify-center items-center mt-5">
-        <AddServices fetchServices={fetchServices} />
       </div>
     </div>
   );

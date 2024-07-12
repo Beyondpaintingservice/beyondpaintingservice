@@ -1,5 +1,5 @@
 {
-  "name": "beyondpaintingservice-backend",
+  "name": "paint-web-backend",
   "version": "1.0.1",
   "type": "module",
   "main": "./src/index.js",

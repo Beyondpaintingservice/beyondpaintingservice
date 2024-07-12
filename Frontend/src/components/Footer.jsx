@@ -6,7 +6,7 @@ import { LuMailPlus } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-	return (
+  return (
     <footer className="sm:px-4 md:my-4 md:px-0 w-full mx-auto divide-y dark:bg-gray-800 bg-white dark:text-gray-100 text-gray-800 absolute left-0">
       <div className="container p-4 md:p-10 flex flex-col justify-between  mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">

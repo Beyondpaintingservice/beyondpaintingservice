@@ -30,6 +30,7 @@ router.route("/change-password").post(verifyJWT, changeCurrentPassword);
 router.route("/current-admin").get(verifyJWT, getCurrentAdmin);
 router.route("/update-account").patch(verifyJWT, updateAccountDetails);
 
+
 router.route("/avatar").patch(verifyJWT, upload.single("avatar"), updateAdminAvatar);
 
 export default router;

@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { reuseInputClassnames } from "../constant/adminConstants";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { setUser } from "../store/slices/userSlice";
+// import { setUser } from "../store/slices/userSlice";
 import ContentWrapper from "../components/ContentWrapper";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -15,7 +15,7 @@ import GoogleMap from "../components/GoogleMap";
 import { submitContactApi } from "../constant/apiUrls";
 
 const ContactUs = () => {
-  const user = useSelector((store) => store.user.userDetails);
+  // const user = useSelector((store) => store.user.userDetails);
 
   const {
     register,
@@ -50,6 +50,10 @@ const ContactUs = () => {
     }
   };
 
+  // useEffect(() => {
+  //   const getContactDetails = async () => {};
+  // });
+
   return (
     <ContentWrapper>
       <h2 className="text-2xl pt-20 font-bold text-gray-800 lg:text-3xl dark:text-white text-start">
@@ -66,7 +70,7 @@ const ContactUs = () => {
               <div className="space-y-4">
                 <p className="flex items-center gap-2 ms:gap-5">
                   <FaLocationDot size={25} />
-                  <span>Fake address, 9999 City</span>
+                  <span>Guwahati (Assam)</span>
                 </p>
                 <p className="flex items-center gap-2 ms:gap-5">
                   <BsFillTelephoneFill size={20} />
@@ -82,7 +86,7 @@ const ContactUs = () => {
                 </p>
                 <p className="flex items-center gap-2 ms:gap-5">
                   <IoMdMail size={26} />
-                  <a href="mailto:">contact@business.com</a>
+                  <a href="mailto:">beyondpaintingservice163@gmail.com</a>
                 </p>
               </div>
             </div>

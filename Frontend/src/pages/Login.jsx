@@ -52,13 +52,12 @@ const Login = () => {
 
     try {
       const response = await axios.request(reqOptions);
-      console.log(response);
-      if (!response.data) {
+      if (!response.data.success) {
         console.log("no user");
         return toast.error(response.data.message || "User login Failed");
       }
 
-      dispatch(setUser(response.data.data.user));
+      dispatch(setUser(response.data.data));
 
       setUserData(response.data.data);
       navigate("/admin/dashboard");
@@ -161,7 +160,6 @@ const Login = () => {
               className="min-w-full px-5 py-3 bg-slate-600 hover:bg-slate-800 dark:hover:bg-stone-800 duration-200 ease-out dark:bg-zinc-900 text-base font-medium text-center text-white  rounded-lg  focus:ring-4 focus:ring-blue-300 sm:w-auto dark:focus:ring-blue-800 md:mt-10 disabled:cursor-wait flex justify-center items-center md:mb-20"
             >
               <span className="mr-2 ">
-                {" "}
                 {isSubmitting ? "Login in.." : "Login"}
               </span>
               {isSubmitting && (
