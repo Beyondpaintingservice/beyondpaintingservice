@@ -1,14 +1,17 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { SmallDashOutlined } from "@ant-design/icons";
-
+import { DeleteOutlined } from "@ant-design/icons";
+import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from "react-redux";
 //absolute bottom-0 w-80 text-center bg-black bg-opacity-70 text-white py-2 px-4 lg:px-4 opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0
-
+{
+  /* <DeleteOutlined /> */
+}
 const Images = ({ data, fetchGallery }) => {
   // const {image, imageTitle} = data
-  // console.log(data);
+
+  // const user = useSelector((store) => store.user.userDetails);
 
   const deleteImage = async (id) => {
     try {
@@ -16,19 +19,18 @@ const Images = ({ data, fetchGallery }) => {
         "https://beyondpaintingservice.onrender.com/api/v1/gallery/delete-image",
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzMzNjA1LCJleHAiOjE3MTk4MjAwMDV9.bpG49TuqVbs_ExapeAfhHJLc0e7yoknDAhr-f2gMibI`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzM0NTEzLCJleHAiOjE3NTQyOTQ1MTN9.eLFKqeI9bxoJp87ZTVOio4LocIpc22ghkfWR9Ta_nMs`,
           },
           data: { _id: id },
         }
       );
-
+      console.log("delete id", id);
       console.log(response);
       fetchGallery();
     } catch (err) {
       console.log(err);
     }
   };
-
   return (
     <div className="relative w-[350px] p-2 overflow-hidden group">
       <img
@@ -37,8 +39,8 @@ const Images = ({ data, fetchGallery }) => {
         className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-110"
       />
       <span className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white py-2 opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 flex items-center justify-center">
-        <SmallDashOutlined
-          style={{ fontSize: "24px", color: "#08c", marginRight: "8px" }}
+        <DeleteOutlined
+          style={{ fontSize: "24px", color: "red", marginRight: "8px" }}
           onClick={() => deleteImage(data._id)}
         />
         <span>{data.imageTitle}</span>
@@ -70,18 +72,18 @@ const AddImage = () => {
         formData,
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzMzNjA1LCJleHAiOjE3MTk4MjAwMDV9.bpG49TuqVbs_ExapeAfhHJLc0e7yoknDAhr-f2gMibI`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzM0NTEzLCJleHAiOjE3NTQyOTQ1MTN9.eLFKqeI9bxoJp87ZTVOio4LocIpc22ghkfWR9Ta_nMs`,
           },
         }
       );
 
-      if (response.status !== 201) {
+      if (response.status !== 200) {
         throw new Error(response.data.message || "Image upload failed");
       }
 
       console.log(response.data.data);
       toast.success(response.data.message || "Image uploaded successfully");
-      //   console.log("mytoust");
+      console.log("mytoust");
     } catch (err) {
       console.error(err);
       toast.error(err.message || "An error occurred. Please try again later.");
@@ -125,6 +127,7 @@ const AddImage = () => {
             value={pageTitle}
             onChange={(e) => setPageTitle(e.target.value)}
             placeholder="Give page name"
+            required
             className="w-full border border-gray-300 dark:border-gray-600 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
           />
         </div>
@@ -176,10 +179,11 @@ const AdminGallery = () => {
 
   return (
     <div className="min-h-screen dark:text-white">
-      <span onClick={() => setAddImages(!addImages)}>
-        <button className="py-2 px-4 bg-orange-500 border rounded-sm">
-          Add New Images
-        </button>
+      <span
+        onClick={() => setAddImages(!addImages)}
+        className="py-3 px-5 bg-blue-700 text-white cursor-pointer mt-40"
+      >
+        Add New Images
       </span>
       {addImages && <AddImage />}
 

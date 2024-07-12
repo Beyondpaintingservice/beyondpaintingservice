@@ -1,18 +1,47 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { addTeamMemberApi, deleteTeamMemberApi } from "../../constant/apiUrls";
 
-const Team = ({ team }) => {
+const Team = ({ team, onDelete }) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  // const dropdownRef = useRef(null);
+  const admin = useSelector((store) => store.user.userDetails);
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
+  const handleDeleteMember = async (_id) => {
+    if (window.confirm("Are you sure you want to delete this team member?")) {
+      try {
+        console.log(team);
+        const headersList = {
+          Authorization: `Bearer ${admin.accessToken}`,
+        };
+
+        const bodyContent = { _id };
+
+        const reqOptions = {
+          url: deleteTeamMemberApi,
+          method: "DELETE",
+          headers: headersList,
+          data: bodyContent,
+        };
+
+        const response = await axios.request(reqOptions);
+        console.log(response.data);
+        onDelete();
+      } catch (error) {
+        console.error("Error deleting team member:", error);
+        // Handle error appropriately (e.g., show user-friendly message)
+      }
+    }
+  };
+
   return (
     <div className="w-2/3 sm:w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="flex  justify-end px-4 pt-4">
+      <div className="flex justify-end px-4 pt-4">
         <button
           id="dropdownButton"
           onClick={toggleDropdown}
@@ -33,17 +62,19 @@ const Team = ({ team }) => {
 
         <div
           id="dropdown"
-          // ref={dropdownRef}
           className={`z-10 ${
             dropdownVisible ? "" : "hidden"
           } text-base list-none absolute mt-8 ml-5 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
         >
           <ul className="py-2" aria-labelledby="dropdownButton">
-            <li className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+            <li className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white cursor-pointer">
               Edit
             </li>
 
-            <li className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+            <li
+              className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white cursor-pointer"
+              onClick={() => handleDeleteMember(team._id)}
+            >
               Delete
             </li>
           </ul>
@@ -72,12 +103,13 @@ const Team = ({ team }) => {
   );
 };
 
-const AddTeam = ({ fetchTeam }) => {
+const AddTeam = ({ fetchTeam, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [photo, setPhoto] = useState(null);
-  const [designation, setDesiganation] = useState("");
+  const [designation, setDesignation] = useState("");
+  const admin = useSelector((store) => store.user.userDetails);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,19 +122,21 @@ const AddTeam = ({ fetchTeam }) => {
 
     if (photo) formData.append("photo", photo);
 
-    const response = await axios.post(
-      "https://beyondpaintingservice.onrender.com/api/v1/team/add-member",
-      formData,
-      {
+    try {
+      const response = await axios.post(addTeamMemberApi, formData, {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzMzNjA1LCJleHAiOjE3MTk4MjAwMDV9.bpG49TuqVbs_ExapeAfhHJLc0e7yoknDAhr-f2gMibI`,
+          Authorization: `Bearer ${admin.accessToken}`,
           "Content-Type": "multipart/form-data",
         },
-      }
-    );
+      });
 
-    console.log(response);
-    fetchTeam();
+      console.log(response);
+      fetchTeam();
+      onClose();
+    } catch (error) {
+      console.error("Error adding team member:", error);
+      // Handle error appropriately (e.g., show user-friendly message)
+    }
   };
 
   return (
@@ -171,7 +205,7 @@ const AddTeam = ({ fetchTeam }) => {
           name="designation"
           type="text"
           value={designation}
-          onChange={(e) => setDesiganation(e.target.value)}
+          onChange={(e) => setDesignation(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
@@ -188,7 +222,7 @@ const AddTeam = ({ fetchTeam }) => {
           type="file"
           accept="image/*"
           onChange={(e) => setPhoto(e.target.files[0])}
-          className="  w-full py-2 px-3 "
+          className="w-full py-2 px-3"
         />
       </div>
       <div className="flex items-center justify-between">
@@ -205,41 +239,43 @@ const AddTeam = ({ fetchTeam }) => {
 
 const AdminTeam = () => {
   const [myteams, setTeams] = useState([]);
-  const [addteam, setTeam] = useState(false);
+  const [addteam, setAddTeam] = useState(false);
 
   const fetchTeam = async () => {
-    const response = await axios.get(
-      "https://beyondpaintingservice.onrender.com/api/v1/team/get-members"
-    );
-    setTeams(response?.data.data);
-    console.log(response);
+    try {
+      const response = await axios.get(
+        "https://beyondpaintingservice.onrender.com/api/v1/team/get-members"
+      );
+      setTeams(response?.data.data);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching team members:", error);
+      // Handle error appropriately (e.g., show user-friendly message)
+    }
   };
 
   useEffect(() => {
     fetchTeam();
   }, []);
 
-  const data = {
-    name: "Mukul",
-    email: "mkanojia1996@gmail.com",
-    phone: "9767351086",
-    photo: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
-    designation: "King Of World",
-  };
-
   return (
     <div className="min-h-screen md:pt-10 dark:text-white">
       <div>
         <button
-          className=" bg-blue-600 p-2 rounded-lg text-white"
-          onClick={() => setTeam(!addteam)}
+          className="bg-blue-600 p-2 rounded-lg text-white"
+          onClick={() => setAddTeam(!addteam)}
         >
           ADD TEAM
         </button>
-        {addteam && <AddTeam fetchTeam={fetchTeam} />}
+        {addteam && (
+          <AddTeam fetchTeam={fetchTeam} onClose={() => setAddTeam(false)} />
+        )}
       </div>
       <div className="flex mt-5 justify-center flex-wrap items-center gap-5">
-        {myteams && myteams.map((team) => <Team key={team?._id} team={team} />)}
+        {myteams &&
+          myteams.map((team) => (
+            <Team key={team?._id} team={team} onDelete={fetchTeam} />
+          ))}
       </div>
     </div>
   );

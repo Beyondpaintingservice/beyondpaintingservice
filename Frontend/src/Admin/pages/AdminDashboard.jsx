@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { getMembersApi } from "../../constant/apiUrls";
 
 const Images = ({ data, fetchGallery }) => {
-  // const {image, imageTitle} = data
-  // console.log(data);
   return (
     <div className="relative w-[350px] p-2 overflow-hidden group">
       <img
@@ -49,7 +49,7 @@ const HomeImages = () => {
 };
 
 const Team = ({ team }) => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  // const [dropdownVisible, setDropdownVisible] = useState(false);
   // const dropdownRef = useRef(null);
 
   //   const toggleDropdown = () => {
@@ -81,16 +81,13 @@ const Team = ({ team }) => {
     </div>
   );
 };
+
 const HomeTeams = () => {
-  const [myteams, setTeams] = useState([]);
-  const [addteam, setTeam] = useState(false);
+  const [myTeams, setTeams] = useState([]);
+  // const [addteam, setTeam] = useState(false);
 
   const fetchTeam = async () => {
-    const getTeamUrl = `${import.meta.env.VITE_API_BASE_URL}${
-      import.meta.env.VITE_API_GET_MEMBERS
-    }`;
-    console.log(getTeamUrl);
-    const response = await axios.get(getTeamUrl);
+    const response = await axios.get(getMembersApi);
     setTeams(response?.data.data);
     console.log(response);
   };
@@ -99,22 +96,15 @@ const HomeTeams = () => {
     fetchTeam();
   }, []);
 
-  const data = {
-    name: "Mukul",
-    email: "mkanojia1996@gmail.com",
-    phone: "9767351086",
-    photo: "https://flowbite.com/docs/images/people/profile-picture-3.jpg",
-    designation: "King Of World",
-  };
-
   return (
     <div className="min-h-screen md:pt-10 dark:text-white">
       <div className="flex mt-5 justify-center flex-wrap items-center gap-5">
-        {myteams && myteams.map((team) => <Team key={team?._id} team={team} />)}
+        {myTeams && myTeams.map((team) => <Team key={team?._id} team={team} />)}
       </div>
     </div>
   );
 };
+
 const AdminDashboard = () => {
   return (
     <div>

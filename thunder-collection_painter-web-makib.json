@@ -1,0 +1,1056 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "painter-web-makib",
+    "collectionId": "0454d74c-e57b-486d-9724-06d02c30400c",
+    "dateExported": "2024-05-19T16:39:19.592Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "b972d72a-af9d-4f81-bacf-b6b0ab7dd347",
+            "name": "MANAGE-ADMIN",
+            "containerId": "",
+            "created": "2024-03-31T13:55:57.100Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "77fa5bd2-8f41-4bd9-978e-f09ada8bf5c2",
+            "name": "Contacts",
+            "containerId": "",
+            "created": "2024-03-31T14:14:44.050Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "96b8b5ec-844f-4c49-a3e0-a75af847d90b",
+            "name": "Team",
+            "containerId": "",
+            "created": "2024-03-31T15:28:26.009Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "9b1ac148-76a6-45a3-a786-49382b653a39",
+            "name": "Services",
+            "containerId": "",
+            "created": "2024-04-01T04:52:38.968Z",
+            "sortNum": 45000
+        },
+        {
+            "_id": "53027d14-1fc8-4ccf-8327-a526ade535ac",
+            "name": "Gallery",
+            "containerId": "",
+            "created": "2024-03-31T18:01:46.012Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "45569121-ada7-418a-975f-aadff0602697",
+            "name": "About",
+            "containerId": "",
+            "created": "2024-04-01T06:38:12.210Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "408f4e86-dfe2-4bfc-964b-41b6d9e9b53d",
+            "name": "Home",
+            "containerId": "",
+            "created": "2024-04-01T09:19:12.632Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "22c6f13c-9cca-49f0-befb-5c99ccea84af",
+            "name": "Carousel-Section",
+            "containerId": "408f4e86-dfe2-4bfc-964b-41b6d9e9b53d",
+            "created": "2024-04-01T11:08:13.414Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "b2871cf1-ac58-463b-8d56-2573d925c105",
+            "name": "heroRow",
+            "containerId": "",
+            "created": "2024-04-01T11:42:37.278Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "f022747e-24b5-4dc0-9843-ef51c600850a",
+            "name": "Carousel-Section",
+            "containerId": "b2871cf1-ac58-463b-8d56-2573d925c105",
+            "created": "2024-04-01T11:42:37.279Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "259f889f-1098-41b5-a40b-b69ec081bc92",
+            "name": "Footer",
+            "containerId": "",
+            "created": "2024-04-01T18:27:27.136Z",
+            "sortNum": 90000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "311fa480-9500-439d-952d-5b0a534f67a1",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "b972d72a-af9d-4f81-bacf-b6b0ab7dd347",
+            "name": "login-admin -POST ",
+            "url": "https://beyondpaintingservice.onrender.com/api/v1/admin/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-31T13:56:15.584Z",
+            "modified": "2024-05-17T18:56:56.962Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"admin@admin.com\",\n  \"email\":\"admin@admin.com\",\n  \"password\":\"admin@admin.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b8761f98-6689-4258-bc4d-57763c38692c",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "b972d72a-af9d-4f81-bacf-b6b0ab7dd347",
+            "name": "register-admin-POST",
+            "url": "http://localhost:8080/api/v1/admin/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-31T13:58:03.846Z",
+            "modified": "2024-05-17T17:50:11.243Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "fullName",
+                        "value": "Admin"
+                    },
+                    {
+                        "name": "email",
+                        "value": "admin@admin.com"
+                    },
+                    {
+                        "name": "username",
+                        "value": "admin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "admin@admin.com"
+                    },
+                    {
+                        "name": "isAdmin",
+                        "value": "true"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "avatar",
+                        "value": "c:\\Users\\RsM\\Desktop\\2021_07_22_15_45_IMG_0384.PNG"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "42f0a2a2-e6dd-418e-90f3-51189b17e239",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "77fa5bd2-8f41-4bd9-978e-f09ada8bf5c2",
+            "name": "submit-contact    ----user",
+            "url": "https://beyondpaintingservice.onrender.com/api/v1/contacts/submit-contact",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-31T14:14:57.442Z",
+            "modified": "2024-05-17T18:49:36.731Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fullName\": \"Test Contact Form USER NAME\",\n  \"email\": \"test@test.com\",\n  \"phone\": \"012346789\",\n  \"message\":\"abcd abcd abcd abcd\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b4f4a2bd-0950-44a1-af9e-7c63f9d4b377",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "77fa5bd2-8f41-4bd9-978e-f09ada8bf5c2",
+            "name": "get-contacts --Admin",
+            "url": "{{host}}/api/v1/contacts/get-contacts",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-31T14:19:36.326Z",
+            "modified": "2024-05-17T19:22:03.916Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcxNTk3MDU1OSwiZXhwIjoxNzE2MDU2OTU5fQ.2Du4R2b9pbtZkImGotw2XWQpmOidYatkulVGBmsev6U"
+            }
+        },
+        {
+            "_id": "e79462ff-d678-4437-9c65-558b58b99f5f",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "77fa5bd2-8f41-4bd9-978e-f09ada8bf5c2",
+            "name": "update-web-contact      -admin",
+            "url": "http://localhost:8080/api/v1/contacts/update-web-contact",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2024-03-31T14:36:29.422Z",
+            "modified": "2024-03-31T15:24:23.110Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\": \"6609800d3a007963809daaa4\",\n  \"address\": \"address address d\",\n  \"firstPhoneNo\": \"firstPhoneNo\",\n  \"secondPhoneNo\": \"secondPhoneNo\",\n  \"mapLink\": \"mapLink\",\n  \"email\": \"email@email.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fab4d0c3-351a-40c6-ac56-deef4cb1150a",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "96b8b5ec-844f-4c49-a3e0-a75af847d90b",
+            "name": "getMembers",
+            "url": "http://localhost:8080/api/v1/team/get-members",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-31T15:28:34.521Z",
+            "modified": "2024-03-31T15:36:28.859Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "607a6ea7-a80e-4afe-8035-264eb20b4826",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "9b1ac148-76a6-45a3-a786-49382b653a39",
+            "name": "getServices",
+            "url": "http://localhost:8080/api/v1/services/get-services",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-01T04:52:38.968Z",
+            "modified": "2024-04-01T04:53:37.295Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "98cca071-456e-4d1d-9c95-9dec5fe86ab4",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "96b8b5ec-844f-4c49-a3e0-a75af847d90b",
+            "name": "updateMember",
+            "url": "http://localhost:8080/api/v1/team/update-member",
+            "method": "PATCH",
+            "sortNum": 65000,
+            "created": "2024-03-31T15:36:46.736Z",
+            "modified": "2024-04-01T05:26:25.286Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "_id",
+                        "value": "6609829fbb4f859a701ffffd"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name2"
+                    },
+                    {
+                        "name": "email",
+                        "value": "email2"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "phone2"
+                    },
+                    {
+                        "name": "designation",
+                        "value": "designation2"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "photo",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (5).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e821e0f9-1a07-479d-9f1b-11f3def9d3ca",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "9b1ac148-76a6-45a3-a786-49382b653a39",
+            "name": "updateService",
+            "url": "http://localhost:8080/api/v1/services/update-service",
+            "method": "PATCH",
+            "sortNum": 65000,
+            "created": "2024-04-01T04:52:38.969Z",
+            "modified": "2024-04-01T05:21:06.354Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "_id",
+                        "value": "660a3f926079489082ac4e19"
+                    },
+                    {
+                        "name": "title",
+                        "value": "Updated Service Title"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Updated Service Description"
+                    },
+                    {
+                        "name": "readMoreLink",
+                        "value": "/updated-link2"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (4).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0c5c5ba8-e002-465b-835d-2efb2ce622c6",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "96b8b5ec-844f-4c49-a3e0-a75af847d90b",
+            "name": "adddMember",
+            "url": "http://localhost:8080/api/v1/team/add-member",
+            "method": "POST",
+            "sortNum": 66250,
+            "created": "2024-04-01T05:17:46.842Z",
+            "modified": "2024-04-01T05:19:08.095Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "name"
+                    },
+                    {
+                        "name": "email",
+                        "value": "email"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "phone"
+                    },
+                    {
+                        "name": "designation",
+                        "value": "designation"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "photo",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (6).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "36df4945-d969-4dfb-860b-ff6548c19a54",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "96b8b5ec-844f-4c49-a3e0-a75af847d90b",
+            "name": "deleteMember",
+            "url": "http://localhost:8080/api/v1/team/delete-member",
+            "method": "DELETE",
+            "sortNum": 67500,
+            "created": "2024-03-31T15:44:13.840Z",
+            "modified": "2024-03-31T15:44:54.360Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\": \"66098368bb4f859a70200012\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b3dbcb79-1d27-4621-8a71-6856700937a4",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "9b1ac148-76a6-45a3-a786-49382b653a39",
+            "name": "deleteService",
+            "url": "http://localhost:8080/api/v1/services/delete-service",
+            "method": "DELETE",
+            "sortNum": 67500,
+            "created": "2024-04-01T04:52:38.970Z",
+            "modified": "2024-04-01T05:31:43.468Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\": \"660a3f926079489082ac4e19\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fa682802-9738-4ec7-bfe4-5175ad25afa1",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "9b1ac148-76a6-45a3-a786-49382b653a39",
+            "name": "addService",
+            "url": "http://localhost:8080/api/v1/services/add-service",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-04-01T04:52:38.971Z",
+            "modified": "2024-04-01T05:01:05.705Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Updated Service Title"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Updated Service Description"
+                    },
+                    {
+                        "name": "readMoreLink",
+                        "value": "readMoreLink"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (7).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4859ff4d-9657-4877-b5f6-0b68ef6c4e1e",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "53027d14-1fc8-4ccf-8327-a526ade535ac",
+            "name": "addImage",
+            "url": "{{host}}/api/v1/gallery/add-image",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-04-01T05:32:25.664Z",
+            "modified": "2024-05-17T19:21:20.445Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "imageTitle",
+                        "value": ""
+                    },
+                    {
+                        "name": "pageTitle",
+                        "value": ""
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (6).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            }
+        },
+        {
+            "_id": "208bb03b-cf4b-4eb0-9172-0552d03d6458",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "53027d14-1fc8-4ccf-8327-a526ade535ac",
+            "name": "updateImage ",
+            "url": "http://localhost:8080/api/v1/gallery/update-image",
+            "method": "PATCH",
+            "sortNum": 85000,
+            "created": "2024-04-01T05:41:12.975Z",
+            "modified": "2024-04-01T05:43:24.286Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "_id",
+                        "value": "660a4920928e1f14f6e61081"
+                    },
+                    {
+                        "name": "imageTitle",
+                        "value": "imageTitle u2"
+                    },
+                    {
+                        "name": "pageTitle",
+                        "value": "pageTitle u"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (7).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "659ed8c7-517d-4a99-89f6-09498deee89e",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "53027d14-1fc8-4ccf-8327-a526ade535ac",
+            "name": "deleteImage",
+            "url": "http://localhost:8080/api/v1/gallery/delete-image",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-04-01T05:45:59.907Z",
+            "modified": "2024-04-01T05:47:13.815Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\":\"660a4831167b7f4358318730\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4a7524ff-3e7f-4908-8f99-6c95463790b9",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "45569121-ada7-418a-975f-aadff0602697",
+            "name": "getAbout  - ",
+            "url": "http://localhost:8080/api/v1/about/get-about",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-04-01T09:13:46.639Z",
+            "modified": "2024-04-01T09:14:05.382Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c493acb8-9155-4f4e-b5c8-ebe107b67faa",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "53027d14-1fc8-4ccf-8327-a526ade535ac",
+            "name": "getImages",
+            "url": "https://beyondpaintingservice.onrender.com/api/v1/gallery/get-images",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-01T05:32:37.438Z",
+            "modified": "2024-05-17T19:00:53.396Z",
+            "headers": []
+        },
+        {
+            "_id": "4fb6257e-7186-46e9-9568-cccb2dfedf7f",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "45569121-ada7-418a-975f-aadff0602697",
+            "name": "addAbout",
+            "url": "http://localhost:8080/api/v1/about/add-about",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-04-01T09:14:21.725Z",
+            "modified": "2024-04-01T09:18:04.154Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "About Us"
+                    },
+                    {
+                        "name": "description",
+                        "value": "description description description description"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "photo",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (5).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "947aa137-434d-4841-8178-e2a614e4b2d3",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "22c6f13c-9cca-49f0-befb-5c99ccea84af",
+            "name": "getImages",
+            "url": "http://localhost:8080/api/v1/home/carousel/get-images",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-01T11:08:27.310Z",
+            "modified": "2024-04-01T11:44:55.321Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aff41abf-23a6-4111-80ff-839868aa5fa1",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "f022747e-24b5-4dc0-9843-ef51c600850a",
+            "name": "getImages",
+            "url": "http://localhost:8080/api/v1/carousel/get-images",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-01T11:42:37.278Z",
+            "modified": "2024-04-01T11:42:37.278Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "36bf3a4f-9a99-49dd-ae49-3d7e1403c96d",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "45569121-ada7-418a-975f-aadff0602697",
+            "name": "updateAbout",
+            "url": "http://localhost:8080/api/v1/about/update-about",
+            "method": "PATCH",
+            "sortNum": 120000,
+            "created": "2024-04-01T09:19:57.324Z",
+            "modified": "2024-04-01T10:56:27.750Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "About Us"
+                    },
+                    {
+                        "name": "description",
+                        "value": "description2 description description description"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "photo",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (7).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0a4284b9-0eab-4f88-8c11-157ba76108bd",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "22c6f13c-9cca-49f0-befb-5c99ccea84af",
+            "name": "addImage",
+            "url": "http://localhost:8080/api/v1/home/carousel/add-image",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-04-01T11:10:11.668Z",
+            "modified": "2024-04-01T11:46:09.506Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "imageTitle",
+                        "value": "exploreMoreLink"
+                    },
+                    {
+                        "name": "exploreMoreLink",
+                        "value": "/services"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (7).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "5f7c0ee9-73d3-45d2-b0aa-0e79460d407a",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "f022747e-24b5-4dc0-9843-ef51c600850a",
+            "name": "addImage",
+            "url": "http://localhost:8080/api/v1/carousel/add-image",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-04-01T11:42:37.279Z",
+            "modified": "2024-04-01T11:42:37.278Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "imageTitle",
+                        "value": "exploreMoreLink"
+                    },
+                    {
+                        "name": "exploreMoreLink",
+                        "value": "/services"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\Screenshots\\Screenshot (7).png"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "91a59458-0ccf-4bb0-96df-e7fcc81f0c1b",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "22c6f13c-9cca-49f0-befb-5c99ccea84af",
+            "name": "updateImage",
+            "url": "http://localhost:8080/api/v1/home/carousel/update-image",
+            "method": "PATCH",
+            "sortNum": 130000,
+            "created": "2024-04-01T11:16:02.677Z",
+            "modified": "2024-04-01T11:47:16.337Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "_id",
+                        "value": "660a97d7eb60b5180a1222d1"
+                    },
+                    {
+                        "name": "imageTitle",
+                        "value": "imageTitle 2"
+                    },
+                    {
+                        "name": "exploreMoreLink",
+                        "value": "/services"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\1711809282301.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6a6ebd18-d206-4cf5-8821-4152245564da",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "f022747e-24b5-4dc0-9843-ef51c600850a",
+            "name": "updateImage",
+            "url": "http://localhost:8080/api/v1/carousel/update-image",
+            "method": "PATCH",
+            "sortNum": 130000,
+            "created": "2024-04-01T11:42:37.280Z",
+            "modified": "2024-04-01T11:42:37.278Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "_id",
+                        "value": "660a9664824238a0cbdb0d2f"
+                    },
+                    {
+                        "name": "imageTitle",
+                        "value": "imageTitle 2"
+                    },
+                    {
+                        "name": "exploreMoreLink",
+                        "value": "/services"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\RsM\\Pictures\\1711809282301.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e19bf2be-3cb9-428d-905c-4cdc4645e25b",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "22c6f13c-9cca-49f0-befb-5c99ccea84af",
+            "name": "deleteImage",
+            "url": "http://localhost:8080/api/v1/home/carousel/delete-image",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2024-04-01T11:17:03.606Z",
+            "modified": "2024-04-01T11:47:28.946Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\": \"660a97d7eb60b5180a1222d1\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d35814ba-546e-4c2b-b39a-fde71c335d72",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "f022747e-24b5-4dc0-9843-ef51c600850a",
+            "name": "deleteImage",
+            "url": "http://localhost:8080/api/v1/carousel/delete-image",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2024-04-01T11:42:37.281Z",
+            "modified": "2024-04-01T11:42:37.278Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"_id\": \"660a9664824238a0cbdb0d2f\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzExODk1MTQ3LCJleHAiOjE3MTE5ODE1NDd9.l6rSSGRe0IV3BrLiKpSJidl5Bg_2H7nFhOYXPsyoiA0"
+            },
+            "tests": []
+        },
+        {
+            "_id": "59a90496-8861-4005-8f95-1a619cd7b33f",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "259f889f-1098-41b5-a40b-b69ec081bc92",
+            "name": "get-footer-data",
+            "url": "http://localhost:8080/api/v1/footer/get-footer-data",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-04-01T18:28:18.826Z",
+            "modified": "2024-04-01T18:28:38.126Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c4ff2258-865f-4653-8dd2-f42086c62daa",
+            "colId": "0454d74c-e57b-486d-9724-06d02c30400c",
+            "containerId": "259f889f-1098-41b5-a40b-b69ec081bc92",
+            "name": "add-footer-data",
+            "url": "http://localhost:8080/api/v1/footer/add-footer-data",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2024-04-01T18:42:34.983Z",
+            "modified": "2024-04-01T18:47:28.849Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "address",
+                        "value": "address address,address,address--address"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "logo",
+                        "value": "c:\\Users\\RsM\\Desktop\\Pins\\ed08394e072bcef22990976ecd9e4507.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA5NmQ3OTE0OThkODg3M2FlNmU0ZTQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbTEiLCJ1c2VybmFtZSI6ImFkbWluMSIsImZ1bGxOYW1lIjoiQWRtaW4iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTE5OTcwODIsImV4cCI6MTcxMjA4MzQ4Mn0.1NzbA5Xn08ggEverQ9ku25IndzsrIbhGrcPVYzhR7ig"
+            },
+            "tests": []
+        }
+    ],
+    "ref": "ZceABC-V8AZuaATZqNS0WmjYFwH-ei0tLToJsFmGgJu2e9FoGrmG5ynyCdOW669BPHrBLllHTvWqRw4aPD95GQ"
+}

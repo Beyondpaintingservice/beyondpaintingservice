@@ -11,75 +11,66 @@ import { headerItemCSS } from "../constant/headerItem";
 import { motion } from "framer-motion";
 
 const Header = () => {
-	// eslint-disable-next-line no-unused-vars
-	const [show, setShow] = useState("top");
-	const [lastScrollY, setLastScrollY] = useState(0);
-	const [mobileMenu, setMobileMenu] = useState(false);
-	const navigate = useNavigate();
-	const location = useLocation();
-	const { userDetails } = useSelector((state) => state?.user);
-	const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const [show, setShow] = useState("top");
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { userDetails } = useSelector((state) => state?.user);
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
-	}, [location]);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
 
-	const controlNavbar = () => {
-		if (window.scrollY > 200) {
-			if (window.scrollY > lastScrollY && !mobileMenu) {
-				setShow("hide");
-			} else {
-				setShow("show");
-			}
-		} else {
-			setShow("top");
-		}
-		setLastScrollY(window.scrollY);
-	};
+  const controlNavbar = () => {
+    if (window.scrollY > 200) {
+      if (window.scrollY > lastScrollY && !mobileMenu) {
+        setShow("hide");
+      } else {
+        setShow("show");
+      }
+    } else {
+      setShow("top");
+    }
+    setLastScrollY(window.scrollY);
+  };
 
-	useEffect(() => {
-		window.addEventListener("scroll", controlNavbar);
-		return () => {
-			window.removeEventListener("scroll", controlNavbar);
-		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [lastScrollY]);
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastScrollY]);
 
-	const navigationHandler = (type) => {
-		if (type === "home") {
-			navigate("/");
-		} else if (type === "about") {
-			navigate("/about");
-		} else if (type === "services") {
-			navigate("/services");
-		} else if (type === "gallery") {
-			navigate("/gallery");
-		} else if (type === "our-team") {
-			navigate("/our-team");
-		} else if (type === "contact") {
-			navigate("/contact");
-		} else if (type === "explore-plans") {
-			navigate("/explore-plans");
-		} else if (type === "admin-login") {
-			navigate("/admin-login");
-		}
-		setMobileMenu(false);
-	};
+  const navigationHandler = (type) => {
+    if (type === "home") {
+      navigate("/");
+    } else if (type === "about") {
+      navigate("/about");
+    } else if (type === "services") {
+      navigate("/services");
+    } else if (type === "gallery") {
+      navigate("/gallery");
+    } else if (type === "our-team") {
+      navigate("/our-team");
+    } else if (type === "contact") {
+      navigate("/contact");
+    } else if (type === "explore-plans") {
+      navigate("/explore-plans");
+    } else if (type === "admin-login") {
+      navigate("/admin-login");
+    }
+    setMobileMenu(false);
+  };
 
-	const logout = () => {
-		try {
-			dispatch(setUser(null));
-			toast.success("Successfully logged out!");
-		} catch (error) {
-			console.error(error);
-			toast.error("Something went wrong");
-		}
-	};
-
-	return (
+ 
+  return (
     <>
       <header
         className={`border-gray-200 lg:px-6 py-4 px-2 md:px-0 mx-auto left-0 fixed z-50 min-w-full dark:md:bg-gray-950 md:z-50 bg-gray-100 dark:bg-gray-950 text-black shadow-lg`}

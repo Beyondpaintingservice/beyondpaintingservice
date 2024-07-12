@@ -60,4 +60,18 @@ const updateWebContactDetails = asyncHandler(async (req, res) => {
 		.json(new ApiResponse(200, updatedContact, "Contact details updated successfully"));
 });
 
-export { submitContact, getAllContacts, updateWebContactDetails };
+const getAdminContact = asyncHandler(async (req, res) => {
+
+	try {
+		const contactDetails = await ContactUsAdmin.findOne();
+		if (!contactDetails) {
+			return res.status(404).json({ message: "Contact details not found" });
+		}
+		res.status(200).json(contactDetails);
+	} catch (error) {
+		res.status(500).json({ message: "Server error", error });
+	}
+
+})
+
+export { submitContact, getAllContacts, updateWebContactDetails, getAdminContact };

@@ -15,7 +15,6 @@ const AdminAbout = () => {
       const response = await fetch(
         "https://beyondpaintingservice.onrender.com/api/v1/about/get-about"
       );
-
       if (!response.ok) {
         throw new Error("Failed to fetch about data");
       }
@@ -51,15 +50,14 @@ const AdminAbout = () => {
     if (photo) {
       formData.append("photo", photo);
     }
-    // console.log(user);
-
+    console.log(user);
     try {
       const response = await fetch(
         "https://beyondpaintingservice.onrender.com/api/v1/about/add-about",
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ3YTFmZmI2MmFkZjViZjhiODUzNTkiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJuYW1lIjoiYWRtaW4iLCJmdWxsTmFtZSI6IkFkbWluIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzE5NzMzNjA1LCJleHAiOjE3MTk4MjAwMDV9.bpG49TuqVbs_ExapeAfhHJLc0e7yoknDAhr-f2gMibI`, //${user?.token}
+            Authorization: `Bearer ${user?.token}`,
           },
           body: formData,
         }

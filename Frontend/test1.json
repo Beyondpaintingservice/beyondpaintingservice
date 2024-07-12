@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "painter-web-makib",
+    "_postman_id": "0454d74c-e57b-486d-9724-06d02c30400c",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "MANAGE-ADMIN",
+      "item": []
+    },
+    {
+      "name": "Contacts",
+      "item": []
+    },
+    {
+      "name": "Team",
+      "item": []
+    },
+    {
+      "name": "Services",
+      "item": []
+    },
+    {
+      "name": "Gallery",
+      "item": []
+    },
+    {
+      "name": "About",
+      "item": []
+    },
+    {
+      "name": "Home",
+      "item": [
+        {
+          "name": "Carousel-Section",
+          "item": []
+        }
+      ]
+    },
+    {
+      "name": "heroRow",
+      "item": [
+        {
+          "name": "Carousel-Section",
+          "item": []
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "item": []
+    }
+  ]
+}
